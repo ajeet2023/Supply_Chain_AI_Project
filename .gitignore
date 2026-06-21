@@ -1,1 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
 .env
+venv/
+.vscode/
+data/olist_geolocation_dataset.csv.env
