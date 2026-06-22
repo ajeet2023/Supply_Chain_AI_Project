@@ -1,2 +1,10 @@
+streamlit
+python-dotenv
+google-genai
 duckdb
 pandas
+numpy
+matplotlib
+seaborn
+reportlab
+scikit-learn

@@ -3,14 +3,16 @@ import os
 from google import genai
 from dotenv import load_dotenv
 
-# Load the enivronment variables from hidden .env file
+# Load the environment variables from hidden .env file
 load_dotenv()
 
-#Configure the web page settings
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# Configure the web page settings
 st.set_page_config(page_title="Supply Chain AI", layout="wide")
 
 st.title("📦 Supply Chain AI Command Center")
-st.markdown("Welcome to the execuitive dashboard for predictive delivery analytics.")
+st.markdown("Welcome to the executive dashboard for predictive delivery analytics.")
 
 st.divider()
 
@@ -47,14 +49,16 @@ if st.button("Generate Executive Email"):
             Tone: Objective and solution-oriented.
             """
 
-            # The client will now automatically find my key from the loaded .env file!
-            client = genai.Client()
-            response = client.models.generate_content(
-                model='gemini-2.5-flash' ,
-                contents=prompt
-            )
+            if not GEMINI_API_KEY:
+                st.error("GEMINI_API_KEY is not configured. Set it in Streamlit Cloud secrets or in a local .env file.")
+            else:
+                client = genai.Client()
+                response = client.models.generate_content(
+                    model='gemini-2.5-flash',
+                    contents=prompt
+                )
 
-            st.success("Draft generated successfully!")
+                st.success("Draft generated successfully!")
 
             # Display the AI response in a clean, scrollable text box
             st.text_area("Executive Email Draft", response.text, height=300)
