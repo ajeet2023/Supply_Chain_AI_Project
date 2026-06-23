@@ -47,3 +47,9 @@ If you are running on a hosted service like Streamlit Community Cloud, set the a
 [![Data Pipeline Results](https://img.shields.io/badge/Data%20Pipeline-Results-blue?style=flat-square)](DATA_PIPELINE_RESULTS.md)
 
 The full terminal output from `python3 src/data_pipeline.py` is available in `DATA_PIPELINE_RESULTS.md`.
+
+## Full Script Run Outputs
+
+[![Run Outputs](https://img.shields.io/badge/Run%20Outputs-MD-green?style=flat-square)](RUN_OUTPUTS.md)
+
+The full terminal outputs for each script are available in `RUN_OUTPUTS.md`.
