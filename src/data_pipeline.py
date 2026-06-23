@@ -67,6 +67,9 @@
 # print("Joined order and Financial Data:")
 # print(result)
 
+# The commented blocks above are preserved legacy examples.
+# The active code below runs all pipeline steps sequentially and prints the results in the terminal.
+
 """Run this script from the project root to display all data pipeline steps in the terminal.
 
 Usage:
