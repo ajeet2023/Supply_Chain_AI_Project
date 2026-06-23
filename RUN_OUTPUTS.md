@@ -116,14 +116,9 @@ PDF  'Executive_Report.pdf'  created successfully!
 ```bash
 python3 src/llm_reporting.py
 ```
-Warning: GEMINI_API_KEY not set. Export it before running this script.
 Compiling Data and contacting the Large Language Model...
 
-[System Note]: Connection failed (Reason: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key.)
-Warning: GEMINI_API_KEY not set. Export it before running this script.
-Compiling Data and contacting the Large Language Model...
-
-[System Note]: Connection failed (Reason: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key.)
+[System Note]: Connection failed (Reason: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}})
 
 ---
 

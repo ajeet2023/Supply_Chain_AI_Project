@@ -48,6 +48,12 @@ If you are running on a hosted service like Streamlit Community Cloud, set the a
 
 The full terminal output from `python3 src/data_pipeline.py` is available in `DATA_PIPELINE_RESULTS.md`.
 
+## LLM Reporting Results
+
+[![LLM Reporting Results](https://img.shields.io/badge/LLM%20Reporting-Results-purple?style=flat-square)](LLM_REPORTING_RESULTS.md)
+
+The full terminal output from `python3 src/llm_reporting.py` is available in `LLM_REPORTING_RESULTS.md`.
+
 ## Full Script Run Outputs
 
 [![Run Outputs](https://img.shields.io/badge/Run%20Outputs-MD-green?style=flat-square)](RUN_OUTPUTS.md)
