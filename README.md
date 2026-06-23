@@ -48,6 +48,12 @@ If you are running on a hosted service like Streamlit Community Cloud, set the a
 
 The full terminal output from `python3 src/data_pipeline.py` is available in `DATA_PIPELINE_RESULTS.md`.
 
+## Predictive Model Results
+
+[![Predictive Model Results](https://img.shields.io/badge/Predictive%20Model-Results-orange?style=flat-square)](PREDICTIVE_MODEL_RESULTS.md)
+
+The full terminal output from `python3 src/predictive_model.py` is available in `PREDICTIVE_MODEL_RESULTS.md`.
+
 ## LLM Reporting Results
 
 [![LLM Reporting Results](https://img.shields.io/badge/LLM%20Reporting-Results-purple?style=flat-square)](LLM_REPORTING_RESULTS.md)
