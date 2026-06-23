@@ -44,11 +44,12 @@ if st.button("Generate Executive Email"):
         try:
             prompt = """
             You are a Senior Data Scientist writing a brief executive email to the VP of Supply Chain.
-            Metrics: Revenu at risk is $150,000, Average Delay is 2.5 days, Model Accuracy is 91.84%.
+            Metrics: Revenue at risk is $150,000, Average Delay is 2.5 days, Model Accuracy is 91.84%.
             Task: Write a concise, professional 3-paragraph email summarizing these findings.
             Tone: Objective and solution-oriented.
             """
 
+            response_text = ""
             if not GEMINI_API_KEY:
                 st.error("GEMINI_API_KEY is not configured. Set it in Streamlit Cloud secrets or in a local .env file.")
             else:
@@ -58,10 +59,11 @@ if st.button("Generate Executive Email"):
                     contents=prompt
                 )
 
+                response_text = response.text
                 st.success("Draft generated successfully!")
 
-            # Display the AI response in a clean, scrollable text box
-            st.text_area("Executive Email Draft", response.text, height=300)
+            if response_text:
+                st.text_area("Executive Email Draft", response_text, height=300)
 
         except Exception as e:
             st.error(f"Connection failed: {e}")
