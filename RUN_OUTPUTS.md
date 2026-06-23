@@ -1,42 +1,93 @@
 # Run Outputs for Project Scripts
 
-This file captures terminal commands and their outputs for the main Python scripts in this repository. It is safe for GitHub and helps show what happens when each script is executed.
+This file captures terminal commands and their outputs for the main Python scripts in this repository.
 
-## Python environment
+## `python3 --version`
 
 ```bash
 python3 --version
 ```
-$(python3 --version 2>&1)
+Python 3.10.4
+
+---
+
+## `python3 -m pip show streamlit`
 
 ```bash
 python3 -m pip show streamlit
 ```
-$(python3 -m pip show streamlit 2>&1 || echo 'streamlit not installed')
+Name: streamlit
+Version: 1.58.0
+Summary: A faster way to build and share data apps
+Home-page: https://streamlit.io
+Author: 
+Author-email: Snowflake Inc <hello@streamlit.io>
+License-Expression: Apache-2.0
+Location: /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages
+Requires: altair, anyio, blinker, cachetools, click, gitpython, httptools, itsdangerous, numpy, packaging, pandas, pillow, protobuf, pyarrow, pydeck, python-multipart, requests, starlette, tenacity, toml, typing-extensions, uvicorn, websockets
+Required-by:
+
+---
+
+## `python3 -m pip show duckdb`
 
 ```bash
 python3 -m pip show duckdb
 ```
-$(python3 -m pip show duckdb 2>&1 || echo 'duckdb not installed')
+Name: duckdb
+Version: 1.5.3
+Summary: DuckDB in-process database
+Home-page: 
+Author: DuckDB Foundation
+Author-email: 
+License: 
+Location: /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages
+Requires: 
+Required-by:
+
+---
+
+## `python3 -m pip show python-dotenv`
 
 ```bash
 python3 -m pip show python-dotenv
 ```
-$(python3 -m pip show python-dotenv 2>&1 || echo 'python-dotenv not installed')
+Name: python-dotenv
+Version: 1.2.2
+Summary: Read key-value pairs from a .env file and set them as environment variables
+Home-page: 
+Author: 
+Author-email: Saurabh Kumar <me+github@saurabh-kumar.com>
+License: BSD-3-Clause
+Location: /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages
+Requires: 
+Required-by:
+
+---
+
+## `python3 -m pip show google-genai`
 
 ```bash
 python3 -m pip show google-genai
 ```
-$(python3 -m pip show google-genai 2>&1 || echo 'google-genai not installed')
+Name: google-genai
+Version: 2.8.0
+Summary: GenAI Python SDK
+Home-page: https://github.com/googleapis/python-genai
+Author: 
+Author-email: Google LLC <googleapis-packages@google.com>
+License-Expression: Apache-2.0
+Location: /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages
+Requires: anyio, distro, google-auth, httpx, pydantic, requests, sniffio, tenacity, typing-extensions, websockets
+Required-by:
 
 ---
 
-## `python3 src/dashboard.py`
+## `python3 -m py_compile src/dashboard.py`
 
 ```bash
-python3 src/dashboard.py
+python3 -m py_compile src/dashboard.py
 ```
-$(python3 src/dashboard.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
 
 ---
 
@@ -45,7 +96,9 @@ $(python3 src/dashboard.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
 ```bash
 python3 src/visualize_data.py
 ```
-$(python3 src/visualize_data.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
+Fetching supply chain data...
+Generating executive visualization...
+Sucess! The chart has been saved as 'delivery_cost_analysis.png' in your main project folder.
 
 ---
 
@@ -54,7 +107,7 @@ $(python3 src/visualize_data.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
 ```bash
 python3 src/generate_pdf.py
 ```
-$(python3 src/generate_pdf.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
+PDF  'Executive_Report.pdf'  created successfully!
 
 ---
 
@@ -63,7 +116,14 @@ $(python3 src/generate_pdf.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
 ```bash
 python3 src/llm_reporting.py
 ```
-$(python3 src/llm_reporting.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
+Warning: GEMINI_API_KEY not set. Export it before running this script.
+Compiling Data and contacting the Large Language Model...
+
+[System Note]: Connection failed (Reason: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key.)
+Warning: GEMINI_API_KEY not set. Export it before running this script.
+Compiling Data and contacting the Large Language Model...
+
+[System Note]: Connection failed (Reason: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key.)
 
 ---
 
@@ -72,7 +132,9 @@ $(python3 src/llm_reporting.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
 ```bash
 python3 src/predictive_model.py
 ```
-$(python3 src/predictive_model.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
+Training the AI model...  (this might take a few seconds)
+--- Machine Learning Model Results ---
+Prediction Accuracy:  91.88%
 
 ---
 
@@ -81,7 +143,11 @@ $(python3 src/predictive_model.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
 ```bash
 python3 src/stats_analysis.py
 ```
-$(python3 src/stats_analysis.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
+--- Statistical Analysis of Late Deliveries ---
+Average Delay (Mean):               9.55 days
+Typical Delay (Median):              5.81 days
+Standard Deviation (volatility):    13.95 days
+Worst Delay (Max):                  188.98 days
 
 ---
 
@@ -90,4 +156,10 @@ $(python3 src/stats_analysis.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
 ```bash
 python3 src/data_pipeline.py
 ```
-$(python3 src/data_pipeline.py 2>&1 | sed 's/\x1b\[[0-9;]*m//g')
+Financial Impact of Delivery Performance:
+  delivery_performance  total_orders  total_revenue  total_freight_cost
+0              ON TIME        101475   1.206133e+07          2005441.45
+1                 LATE          8714   1.158921e+06           192704.45
+
+---
+
