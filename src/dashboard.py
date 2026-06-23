@@ -3,6 +3,11 @@ import os
 from google import genai
 from dotenv import load_dotenv
 
+# Run locally with:
+#   streamlit run src/dashboard.py
+# If you want to test on a specific port:
+#   streamlit run src/dashboard.py --server.port 8501
+
 # Load the environment variables from hidden .env file
 load_dotenv()
 

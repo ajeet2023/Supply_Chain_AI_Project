@@ -26,4 +26,17 @@ This project moves beyond standard BI dashboards by automating the data-to-decis
 
 🔐 **Security First** 
 
-This project implements roubust security practicies, including the use of .env files for credential management and .gitignore protocols to ensure API keys are never exposed in version control. 
+This project implements roubust security practicies, including the use of .env files for credential management and .gitignore protocols to ensure API keys are never exposed in version control.
+
+## Run the dashboard locally
+
+From the repository root, open a terminal and run:
+
+```bash
+pip install -r requirements.txt
+streamlit run src/dashboard.py
+```
+
+Then open the browser at `http://localhost:8501`.
+
+If you are running on a hosted service like Streamlit Community Cloud, set the app path to `src/dashboard.py`.
