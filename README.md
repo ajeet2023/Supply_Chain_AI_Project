@@ -56,6 +56,8 @@ The full terminal output from `python3 src/data_pipeline.py` is available in `DA
 The full terminal output from `python3 src/llm_reporting.py` is available in `LLM_REPORTING_RESULTS.md`.
 The sample generated executive email is available in `LLM_REPORTING_SAMPLE_EMAIL.md`.
 
+If the API call succeeds, replace the placeholder text in `LLM_REPORTING_SAMPLE_EMAIL.md` with the actual email content printed by the script.
+
 ## Full Script Run Outputs
 
 [![Run Outputs](https://img.shields.io/badge/Run%20Outputs-MD-green?style=flat-square)](RUN_OUTPUTS.md)
