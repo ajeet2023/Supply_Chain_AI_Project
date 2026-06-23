@@ -54,6 +54,12 @@ The full terminal output from `python3 src/data_pipeline.py` is available in `DA
 
 The full terminal output from `python3 src/predictive_model.py` is available in `PREDICTIVE_MODEL_RESULTS.md`.
 
+## Stats Analysis Results
+
+[![Stats Analysis Results](https://img.shields.io/badge/Stats%20Analysis-Results-teal?style=flat-square)](STATS_ANALYSIS_RESULTS.md)
+
+The full terminal output from `python3 src/stats_analysis.py` is available in `STATS_ANALYSIS_RESULTS.md`.
+
 ## LLM Reporting Results
 
 [![LLM Reporting Results](https://img.shields.io/badge/LLM%20Reporting-Results-purple?style=flat-square)](LLM_REPORTING_RESULTS.md)
