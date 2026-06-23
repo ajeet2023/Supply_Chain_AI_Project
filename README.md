@@ -40,3 +40,8 @@ streamlit run src/dashboard.py
 Then open the browser at `http://localhost:8501`.
 
 If you are running on a hosted service like Streamlit Community Cloud, set the app path to `src/dashboard.py`.
+
+
+## Data Pipeline Results
+
+The full terminal output from `python3 src/data_pipeline.py` is available in `DATA_PIPELINE_RESULTS.md`.
