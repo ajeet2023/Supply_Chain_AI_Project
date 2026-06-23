@@ -51,8 +51,10 @@ The full terminal output from `python3 src/data_pipeline.py` is available in `DA
 ## LLM Reporting Results
 
 [![LLM Reporting Results](https://img.shields.io/badge/LLM%20Reporting-Results-purple?style=flat-square)](LLM_REPORTING_RESULTS.md)
+[![LLM Reporting Email](https://img.shields.io/badge/LLM%20Reporting-Email-lightgrey?style=flat-square)](LLM_REPORTING_SAMPLE_EMAIL.md)
 
 The full terminal output from `python3 src/llm_reporting.py` is available in `LLM_REPORTING_RESULTS.md`.
+The sample generated executive email is available in `LLM_REPORTING_SAMPLE_EMAIL.md`.
 
 ## Full Script Run Outputs
 
