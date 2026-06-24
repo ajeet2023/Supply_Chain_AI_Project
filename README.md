@@ -41,6 +41,18 @@ Then open the browser at `http://localhost:8501`.
 
 If you are running on a hosted service like Streamlit Community Cloud, set the app path to `src/dashboard.py`.
 
+## Streamlit Cloud secret setup
+To use the AI executive summary feature, configure the `GEMINI_API_KEY` secret in Streamlit Cloud:
+
+1. Open your app settings in Streamlit Cloud.
+2. Go to "Secrets".
+3. Add a secret named `GEMINI_API_KEY` with your Gemini API key.
+
+For local development, create a `.env` file at the project root with:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
 
 ## Data Pipeline Results
 

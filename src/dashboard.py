@@ -8,10 +8,26 @@ from dotenv import load_dotenv
 # If you want to test on a specific port:
 #   streamlit run src/dashboard.py --server.port 8501
 
-# Load the environment variables from hidden .env file
-load_dotenv()
+def get_gemini_api_key():
+    load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+    env_key = os.getenv("GEMINI_API_KEY")
+    if env_key:
+        return env_key, "local .env"
+
+    secret_key = st.secrets.get("GEMINI_API_KEY")
+    if secret_key:
+        return secret_key, "Streamlit secrets (top-level)"
+
+    google_secret = st.secrets.get("google", {}).get("GEMINI_API_KEY")
+    if google_secret:
+        return google_secret, "Streamlit secrets (google.GEMINI_API_KEY)"
+
+    return None, None
+
+GEMINI_API_KEY, key_source = get_gemini_api_key()
+if GEMINI_API_KEY:
+    os.environ["GEMINI_API_KEY"] = GEMINI_API_KEY
 
 # Configure the web page settings
 st.set_page_config(page_title="Supply Chain AI", layout="wide")
@@ -44,6 +60,13 @@ st.divider()
 st.header("3. AI Executive Summary")
 st.markdown("Click below to trigger the Generative AI model to draft an email based on current metrics.")
 
+if GEMINI_API_KEY:
+    st.info(f"AI key status: configured via {key_source}.")
+else:
+    st.warning(
+        "AI key status: GEMINI_API_KEY is not configured. Add it to Streamlit Cloud secrets or create a local .env file with GEMINI_API_KEY."
+    )
+
 if st.button("Generate Executive Email"):
     with st.spinner("Contacting Google Gemini AI..."):
         try:
@@ -56,9 +79,12 @@ if st.button("Generate Executive Email"):
 
             response_text = ""
             if not GEMINI_API_KEY:
-                st.error("GEMINI_API_KEY is not configured. Set it in Streamlit Cloud secrets or in a local .env file.")
+                st.error(
+                    "GEMINI_API_KEY is not configured. Add it to Streamlit Cloud secrets or create a local .env file with GEMINI_API_KEY."
+                )
             else:
-                client = genai.Client()
+                client = genai.Client(api_key=GEMINI_API_KEY)
+                st.write(f"Using GEMINI_API_KEY from {key_source}.")
                 response = client.models.generate_content(
                     model='gemini-2.5-flash',
                     contents=prompt
