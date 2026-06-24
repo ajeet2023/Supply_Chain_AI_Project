@@ -1,6 +1,6 @@
 📦 **Supply Chain AI Command Center**
 
-An automated, end-toe-end supply chain analytics pipeline that leverages machine learning and generative AI to provide actionable execuitive insights.
+An automated, end-to-end supply chain analytics pipeline that leverages machine learning and generative AI to provide actionable execuitive insights.
 
 🚀 **Overview**
 
