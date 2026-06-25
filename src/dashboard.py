@@ -23,6 +23,10 @@ def get_gemini_api_key():
     if google_secret:
         return google_secret, "Streamlit secrets (google.GEMINI_API_KEY)"
 
+    gemini_secret = st.secrets.get("gemini", {}).get("api_key")
+    if gemini_secret:
+        return gemini_secret, "Streamlit secrets (gemini.api_key)"
+
     return None, None
 
 GEMINI_API_KEY, key_source = get_gemini_api_key()
@@ -61,11 +65,17 @@ st.header("3. AI Executive Summary")
 st.markdown("Click below to trigger the Generative AI model to draft an email based on current metrics.")
 
 if GEMINI_API_KEY:
-    st.info(f"AI key status: configured via {key_source}.")
+    st.success(f"AI key status: configured via {key_source}.")
 else:
-    st.warning(
+    st.error(
         "AI key status: GEMINI_API_KEY is not configured. Add it to Streamlit Cloud secrets or create a local .env file with GEMINI_API_KEY."
     )
+    st.write("Streamlit secrets keys found:")
+    st.json({
+        "has_GEMINI_API_KEY": "GEMINI_API_KEY" in st.secrets,
+        "has_google_GEMINI_API_KEY": "GEMINI_API_KEY" in st.secrets.get("google", {}),
+        "has_gemini_api_key": "api_key" in st.secrets.get("gemini", {}),
+    })
 
 if st.button("Generate Executive Email"):
     with st.spinner("Contacting Google Gemini AI..."):
