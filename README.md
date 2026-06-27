@@ -1,6 +1,6 @@
 # Supply Chain AI Command Center
 
-A recruiter-friendly data project that combines analytics, dashboarding, predictive modeling, and generative AI to turn supply chain data into executive-ready insights.
+A data project that combines analytics, dashboarding, predictive modeling, and generative AI to turn supply chain data into executive-ready insights.
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-App-ff4b4b.svg)](https://streamlit.io/)
@@ -52,9 +52,7 @@ This repository demonstrates end-to-end business analytics and AI workflow skill
 - Report generation with ReportLab
 - Environment-based secret management with dotenv
 
-## Why recruiters notice this
-
-This project is strong because it goes beyond basic notebooks and shows:
+This project shows:
 
 - real business context through supply chain and operations data
 - a full analytics pipeline from data to insight
